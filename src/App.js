@@ -1,12 +1,16 @@
+import ItemCount from "./components/ItemCount";
 import ItemListContainer from "./components/ItemListContainer";
 import Navbar from "./components/NavBar";
+
+
 
 
 function App() {
   return (
     <>
       <Navbar />
-      <ItemListContainer greeting='Pagina en Mantenimiento'/>
+      <ItemListContainer greeting='Venta de Herramientas'/>
+      <ItemCount quantity='10' />
     </>
 
 )}
