@@ -25,16 +25,14 @@ const ItemCount=()=>{
    
 
     return(
-        <div className="container">
-            <div className="card-body">
-            <h5 className="card-title">Taladro Inalambrico</h5>
+        <div>
             <div className="d-flex justify-content-between">
             <button className="btn btn-primary" onClick={onSubstract}>-</button>
             <h6> {counter} </h6>
             <button className="btn btn-primary" onClick={onAdd}>+</button>
             <button className="btn btn-primary" onClick={addToCart}>Agregar al Carrito</button>  
             </div>          
-            </div>
+
         </div>
     )
 }

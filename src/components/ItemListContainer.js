@@ -1,9 +1,24 @@
+import { useState, useEffect } from "react"
+import ItemList from "./ItemList"
+
 const ItemListContainer=({greeting})=>{
-    return<div className="container">
+    const [items, setItems] = useState([]) 
+
+    useEffect(()=>{
+        fetch('./data/products.json')
+            .then(response=> response.json())
+            .then(json =>{console.log(json)
+            setItems(json)})
+    
+    }, [])
+
+    return(
+    <div className="container">
         <blockquote className="blockquote text-center">
-            <h1 className="mb-0">{greeting}</h1>
+            <h3 className="mb-0">{greeting}</h3>
+            {<ItemList items={items} />}
         </blockquote>
-  </div>
+    </div>)
 }
 
 export default ItemListContainer

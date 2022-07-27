@@ -1,0 +1,38 @@
+[
+    {
+      "id":1,
+      "descripcion":"Taladro inalambrico",
+      "precio":30,
+      "imagen":"./img/herramientas/taladros/051848.jpg"
+    },
+    {
+      "id":2,
+      "descripcion":"RotoMartillo", 
+      "precio":80, 
+      "imagen":"./img/herramientas/taladros/055058.jpg"
+    },
+    {
+      "id":3,
+      "descripcion":"Sierra Caladora", 
+      "precio":40,
+      "imagen":"./img/herramientas/sierra/049402.jpg"
+    },
+    {
+      "id":4,
+      "descripcion":"Sierra Circular", 
+      "precio":40,
+      "imagen":"./img/herramientas/sierra/054330.jpg"
+    },
+    {
+      "id":5,
+      "descripcion":"Esmeril Angular", 
+      "precio":50,
+      "imagen":"./img/herramientas/esmeril/053707.jpg"
+    },
+    {
+      "id":6,
+      "descripcion":"Bateria 18v", 
+      "precio":30,
+      "imagen":"./img/herramientas/baterias/053549.jpg"
+    }
+]
