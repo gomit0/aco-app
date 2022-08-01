@@ -1,13 +1,20 @@
-import ItemListContainer from "./components/ItemListContainer";
-import Navbar from "./components/NavBar";
-
-
+import './App.css';
+import { Routes, Route } from 'react-router-dom';
+import ItemListContainer from './components/ItemListContainer';
+import ItemDetailsConteiner from './components/ItemDetailContainer';
+import NavBar from './components/NavBar';
 function App() {
   return (
-    <>
-      <Navbar />
-      <ItemListContainer greeting='Venta de Herramientas'/>
-    </>
 
-)}
-export default App
+    <div className='App'>
+      <NavBar />
+      <Routes>
+        <Route exact path='/' element={<ItemListContainer />} />
+        <Route exact path='/item/:id' element={<ItemDetailsConteiner />} />
+      </Routes>
+    </div>
+
+  );
+}
+
+export default App;
