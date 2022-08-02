@@ -1,21 +1,27 @@
 import { useState, useEffect } from "react"
+import { useParams } from "react-router-dom"
+import { getProducts } from "../api"
 import ItemList from "./ItemList"
 
-const ItemListContainer=({greeting})=>{
+const ItemListContainer=()=>{
     const [items, setItems] = useState([]) 
-
+    const {category} = useParams()
     useEffect(()=>{
-        fetch('./data/products.json')
-            .then(response=> response.json())
-            .then(json =>{console.log(json)
-            setItems(json)})
-    
-    }, [])
+        getProducts
+        .then((response) => {
+            if (category) {
+                setItems(response.find((product) => product.id === category)
+                );
+            } else {
+                setItems(response)
+            }
+        })
+        .catch ((error) => console.log("Error al cargar", error));
+    },[category])
 
     return(
     <div className="container">
         <blockquote className="blockquote text-center">
-            <h3 className="mb-0">{greeting}</h3>
             {<ItemList items={items} />}
         </blockquote>
     </div>)

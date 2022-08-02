@@ -1,22 +1,24 @@
-import { useState, useEffect } from "react"
 import ItemDetail from "./ItemDetail"
+import {getItem} from "../api"
+import { useEffect, useState } from "react"
+import { useParams } from "react-router-dom"
 
-
-const ItemDetailContainer=({item})=>{
-    const [product, setProduct] = useState([]) 
-
-    useEffect(()=>{
-        fetch('./data/products.json')
-            .then(response=> response.json())
-            .then(json =>{console.log(json)
-            setProduct(json)})
+const ItemDetailContainer=()=>{
+    const [item, setItem] = useState()
+    const {id} = useParams()
     
-    }, [])
+   useEffect(() =>{
+    getItem(id)
+    .then((product)=>{
+        setItem(product)
+    })
+    .catch((error)=> console.log(error))
+   },[id])
 
     return(
     <div className="container">
         <blockquote className="blockquote text-center">
-            {<ItemDetail product={product} />}
+            {<ItemDetail item={item} />}
         </blockquote>
     </div>)
 }
