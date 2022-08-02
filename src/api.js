@@ -2,7 +2,7 @@ const product = [
     {
       "id":1,
       "nombre":"Taladro inalambrico",
-      "categoria":"inalambrico",
+      "category":"inalambrico",
       "descripcion":"KIT TALADRO INALAMBRICO 10MM 12V 2BAT TP 810/12 K2",
       "precio":30,
       "imagen":"../img/herramientas/taladros/051848.jpg"
@@ -10,7 +10,7 @@ const product = [
     {
       "id":2,
       "nombre":"RotoMartillo", 
-      "categoria":"cableado",
+      "category":"cableado",
       "descripcion":"ROTOMARTILLO SDS PLUS 1500W 6 J RM 932M/25 K",
       "precio":80, 
       "imagen":"../img/herramientas/taladros/055058.jpg"
@@ -18,7 +18,7 @@ const product = [
     {
       "id":3,
       "nombre":"Sierra Caladora",
-      "categoria":"cableado",
+      "category":"cableado",
       "descripcion":"SIERRA CALADORA 400w SK 455/1", 
       "precio":40,
       "imagen":"../img/herramientas/sierra/049402.jpg"
@@ -26,7 +26,7 @@ const product = [
     {
       "id":4,
       "nombre":"Sierra Circular",
-      "categoria":"inalambrico",
+      "category":"inalambrico",
       "descripcion":"SIERRA CIRCULAR 6 1/2'; 18v SIN BAT SC 807/18", 
       "precio":40,
       "imagen":"../img/herramientas/sierra/054330.jpg"
@@ -34,7 +34,7 @@ const product = [
     {
       "id":5,
       "nombre":"Esmeril Angular",
-      "categoria":"cableado",
+      "category":"cableado",
       "descripcion":"ESMERIL ANGULAR 7'; 2300W AA 818/220", 
       "precio":50,
       "imagen":"../img/herramientas/esmeril/053707.jpg"
@@ -42,7 +42,7 @@ const product = [
     {
       "id":6,
       "nombre":"Bateria 18v",
-      "categoria":"inalambrico",
+      "category":"inalambrico",
       "descripcion":"BATERIA GLADIATOR 1,5 AMPERES 18v BAT 818-1.5", 
       "precio":30,
       "imagen":"../img/herramientas/baterias/053549.jpg"

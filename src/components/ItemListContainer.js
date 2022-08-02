@@ -10,7 +10,7 @@ const ItemListContainer=()=>{
         getProducts
         .then((response) => {
             if (category) {
-                setItems(response.find((product) => product.id === category)
+                setItems(response.filter((product) => product.category === category)
                 );
             } else {
                 setItems(response)
