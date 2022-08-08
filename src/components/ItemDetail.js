@@ -1,6 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 import ItemCount from './ItemCount'
+
 const ItemDetail = ({item}) => {
+    const [count, setCount] = useState(0)
+    const navigate = useNavigate();
+
+    const handleAdd = (quantity) =>{
+        setCount(quantity)
+        console.log(count)
+        navigate('/cart')
+    }
 
     return (
 
@@ -14,7 +24,7 @@ const ItemDetail = ({item}) => {
                             <h5>${item?.precio}</h5>
                         </div>
                         <p className="lead">{item?.descripcion}</p>
-                        <ItemCount/>
+                        <ItemCount stock={10} initial='1' onAdd={handleAdd}/>
                     </div>
                 </div>
 
