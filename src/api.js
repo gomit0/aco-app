@@ -57,13 +57,13 @@ export const  getProducts =  new Promise ((resolve, reject) => {
                   } else {
                       reject ("Error al Cargar los Productos")
                   }
-              },2000 )
+              },1000 )
           
           })
 
 export const getItem = (id)=>{
     const task = new Promise((resolve)=>{
-        setTimeout(()=>resolve(product.find(select=>select.id === parseInt(id))),2000)
+        setTimeout(()=>resolve(product.find(select=>select.id === parseInt(id))),1000)
     })
     return task
 }

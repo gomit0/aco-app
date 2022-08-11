@@ -7,7 +7,7 @@ export default function Navbar(){
 
     return <nav className="navbar navbar-expand-lg navbar-light">
 
-      <ul className="navbar-nav justify-content-between w-100">
+      <ul className="navbar-nav w-100">
         <li className="nav-item">
           <Link className="navbar-brand mb-0 h1" to="/">INICIO</Link>
         </li>

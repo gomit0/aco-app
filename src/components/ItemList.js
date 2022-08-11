@@ -1,9 +1,7 @@
 import Item from "./Item"
 
 const ItemList=({items})=>{ 
-    console.log({items})
-
-    
+  
 
     return<div className="row row-cols-1 row-cols-md-2 g-4">
         
