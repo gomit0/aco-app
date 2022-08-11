@@ -5,21 +5,26 @@ export const CartContext = createContext({})
 const CartProvider = ({children}) =>{
     const [cart, setCart] = useState([])
 
-    const searchItem = (item) => cart.findIndex((e) => e.id === item.id)
+    const getIndexItem = (item) => cart.findIndex((e) => e.id === item.id)
 
-    const addToCart = (item, quantity) => {
+/*     const addToCart = (item, quantity) => {
         const newItem = {...item, cantidad: quantity}
         
-        searchItem(item)
+        getIndexItem(item)
         const isInCart = cart.find((e) => e.id === item.id)
-        console.log({isInCart})
-
         return isInCart ? setCart([...cart.filter(x=>x.id!==item.id),{...isInCart , cantidad : isInCart.cantidad + quantity}]) : setCart([...cart,newItem])
 
+    } */
+
+
+    const addToCart =(item , quantity)=>{
+        let actualCart = cart;
+        const itemIndex = getIndexItem(item); //cart.findIndex(cartItem => cartItem.id === item.id);
+        return itemIndex > -1 ?(actualCart[itemIndex].cantidad += quantity , setCart(actualCart)) : setCart([...cart,{...item ,cantidad: quantity}])
     }
 
     const removeItem = (item) => {
-        cart.splice(searchItem(item), 1 )
+        cart.splice(getIndexItem(item), 1 )
         return setCart([...cart])
     }
 

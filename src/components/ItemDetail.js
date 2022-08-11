@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { CartContext } from '../context/CartContext';
 import ItemCount from './ItemCount'
 
@@ -7,9 +7,13 @@ const ItemDetail = ({item}) => {
     const [count, setCount] = useState(0)
     // const navigate = useNavigate();
 
+    useEffect(()=>{
+        console.log(count)
+    },[count])
+
     const handleAdd = (quantity) =>{
-       /*  setCount(quantity)
-        console.log(count) */
+        setCount(quantity)
+        
         addToCart(item, quantity)
         // navigate('/cart')
     }
@@ -28,10 +32,7 @@ const ItemDetail = ({item}) => {
                         <p className="lead">{item?.descripcion}</p>
                         <ItemCount stock={10} initial='1' onAdd={handleAdd}/>
                     </div>
-                </div>
-
-
-            
+                </div>         
             </div>
     )
 }
