@@ -6,7 +6,9 @@ import NavBar from './components/NavBar';
 import CartProvider from './context/CartContext';
 import Cart from './components/Cart';
 
+
 function App() {
+
   return (
 
     <BrowserRouter> 
@@ -15,7 +17,7 @@ function App() {
       <Routes>
         <Route exact path='/' element={<ItemListContainer />} />
         <Route exact path='/item/:id' element={<ItemDetailsConteiner />} />
-        <Route path='/categoria/:category' element={<ItemListContainer/>}/> 
+        <Route path='/categoria/:categoria' element={<ItemListContainer/>}/> 
         <Route exact path='/nosotros' element={<h1>Nosotros</h1>}/>
         <Route exact path='/cart' element={<Cart/>}/>
       </Routes>

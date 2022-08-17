@@ -1,23 +1,39 @@
+import { collection, getDocs, getFirestore, query, where } from "firebase/firestore"
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
-import { getProducts } from "../api"
 import ItemList from "./ItemList"
 
 const ItemListContainer=()=>{
+
     const [items, setItems] = useState([]) 
-    const {category} = useParams()
-    useEffect(()=>{
-        getProducts
-        .then((response) => {
-            if (category) {
-                setItems(response.filter((product) => product.category === category)
-                );
-            } else {
-                setItems(response)
-            }
-        })
-        .catch ((error) => console.log("Error al cargar", error));
-    },[category])
+    const {categoria} = useParams()
+
+    useEffect(() => {
+        const db = getFirestore()
+        const itemsCollection = collection(db, "items")
+          getDocs(itemsCollection).then((snapshot)=>{
+            const data = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
+            console.log(data)
+            setItems(data)
+          })
+      },[])
+      useEffect(() => {
+        if (categoria) {
+          const db = getFirestore()
+      
+          const itemsCollectionQuery = query(
+            collection(db, 'items'),
+            where('categoria', '==', categoria)
+          )
+    
+          getDocs(itemsCollectionQuery)
+            .then((snapshot) => {
+              const data = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
+              setItems(data)
+            })
+            .catch((error) => console.error(error))
+        }
+      }, [categoria])
 
     return(
     <div className="container">
