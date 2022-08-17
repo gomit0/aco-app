@@ -9,15 +9,6 @@ const ItemListContainer=()=>{
     const {categoria} = useParams()
 
     useEffect(() => {
-        const db = getFirestore()
-        const itemsCollection = collection(db, "items")
-          getDocs(itemsCollection).then((snapshot)=>{
-            const data = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
-            console.log(data)
-            setItems(data)
-          })
-      },[])
-      useEffect(() => {
         if (categoria) {
           const db = getFirestore()
       
@@ -32,8 +23,16 @@ const ItemListContainer=()=>{
               setItems(data)
             })
             .catch((error) => console.error(error))
+        }else{
+            const db = getFirestore()
+            const itemsCollection = collection(db, "items")
+              getDocs(itemsCollection).then((snapshot)=>{
+                const data = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
+                console.log(data)
+                setItems(data)
+              })
         }
-      }, [categoria])
+    }, [categoria])
 
     return(
     <div className="container">
