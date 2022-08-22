@@ -4,10 +4,22 @@ import ItemListContainer from './components/ItemListContainer';
 import ItemDetailsConteiner from './components/ItemDetailContainer';
 import NavBar from './components/NavBar';
 import CartProvider from './context/CartContext';
-import Cart from './components/Cart';
+import CartContainer from './components/CartContainer';
+import { useEffect } from 'react';
+import { addDoc, collection, getFirestore } from 'firebase/firestore';
+import { product } from './api';
 
 
 function App() {
+  
+/*   useEffect(()=>{
+    const db =getFirestore()
+    const itemCollection = collection(db, 'items')
+    product.map((newItem)=>{
+      addDoc(itemCollection, newItem)
+      .then(({id})=>console.log({id}))
+    })
+  },[]) */
 
   return (
 
@@ -19,7 +31,7 @@ function App() {
         <Route exact path='/item/:id' element={<ItemDetailsConteiner />} />
         <Route path='/categoria/:categoria' element={<ItemListContainer/>}/> 
         <Route exact path='/nosotros' element={<h1>Nosotros</h1>}/>
-        <Route exact path='/cart' element={<Cart/>}/>
+        <Route exact path='/cart' element={<CartContainer/>}/>
       </Routes>
       </CartProvider>
     </BrowserRouter>
