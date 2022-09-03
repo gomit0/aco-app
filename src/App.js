@@ -5,9 +5,6 @@ import ItemDetailsConteiner from './components/ItemDetailContainer';
 import NavBar from './components/NavBar';
 import CartProvider from './context/CartContext';
 import CartContainer from './components/CartContainer';
-import { useEffect } from 'react';
-import { addDoc, collection, getFirestore } from 'firebase/firestore';
-import { product } from './api';
 
 
 function App() {
