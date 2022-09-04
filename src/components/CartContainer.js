@@ -43,8 +43,8 @@ const CartContainer=()=>{
             confirmButtonText: 'Confirmar',
             allowOutsideClick: false,
             focusConfirm:false,
-            }).then((formValues)=>{
-                if(formValues.value){
+            }).then((values)=>{
+                if(values.value){
                     let buyName = document.getElementById('buyerName').value
                     let buyAddress = document.getElementById('buyerAddress').value
                     let buyPhone =parseInt(document.getElementById('buyerPhone').value)

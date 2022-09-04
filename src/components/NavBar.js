@@ -22,7 +22,7 @@ export default function Navbar(){
           </ul>
         </li>
         <li className="nav-item">
-          <Link className="nav-link" to="/nosotros" >Nosotros</Link>
+          <Link className="nav-link" to="/Ordenes" >Ordenes</Link>
         </li>
         <li className="nav-item">
           <CartWidget/>
