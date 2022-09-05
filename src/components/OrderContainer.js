@@ -1,61 +1,71 @@
-import { collection, getDocs, getFirestore } from "firebase/firestore"
-import {  useEffect,  useState } from "react";
+import { getDocs, getFirestore , collection } from "firebase/firestore"
+import { useState } from "react";
+import Swal from "sweetalert2";
 
 
 const OrderContainer=()=>{
     
     const [order, setOrder] = useState([]) 
     const [search, setSearch] = useState('')
-   
-    useEffect(() => {
+    const [result, setResult] = useState([])
+
+    const queryId = (e)=>{
+        setSearch(e.target.value)
+        handleSearch()
+    }
+
+    const handleSearch = ()=>{
         const db = getFirestore();
         const queryCollection = collection(db, 'orders')
         getDocs(queryCollection)
             .then(res => setOrder(res.docs.map(item => ({id: item.id, ...item.data()}))))
-    }, [])
-    const queryId = (e)=>{
-        setSearch(e.target.value)
-        handleFilter(e.target.value)
-        console.log(search)
-    }
-    const handleFilter = (searchId) => {
-        const resultadosBusqueda = order.filter((e) => {
-            if (e.id.toString().toLowerCase().includes(searchId.toLowerCase())) {
-                return (e)
-            } else {
-                return('')
-            }
-        })
-        setOrder(resultadosBusqueda)
-        console.log(order)
+    } 
+    const handleSearchResult = ()=>{
+        const showOrder =  order.find((e) => e.id === search)
+        if(showOrder){
+            setResult([showOrder])
+        }
+        else{
+            Swal.fire({
+                title: 'Orden no Encontrada',
+                icon: 'error'
+            })
+        }
+
     }
     
-
+  
     return(
-    <div className="container">
-           <h2> Buscar orden <input type='text' placeholder="ID" value={search} onChange={queryId}/></h2>
+        <div className="container">
+                 <h2> Buscar orden <input type='text' placeholder="ID" value={search} onChange={queryId}/><button onClick={handleSearchResult}>Buscar</button></h2>
+        
+                <table className="table">
+                    <thead>
+                        <tr>
+                            <th>ID de Compra</th>
+                            <th>Nombre</th>
+                            <th>Total de la Compra</th>
+                            <th>Fecha de la Compra</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            result.map((result) => 
+                                <tr key={result.id}>
+                                    <th>{result.id}</th>
+                                    <th><h4> {result.buyer.Nombre} </h4></th>
+                                    <th><h4> {result.total} $usd</h4></th>
+                                    <th><h4>{result.fecha}</h4></th>
+                                </tr>
+                            )
+                        }
+                        </tbody>
+                    </table>
+        
+            </div>)
 
-            <table className="table">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Nombre</th>
-                    <th>total</th>
-                    <th>fecha</th>
-                </tr>
-            </thead>
-            <tbody>
-                {order.map((order) => 
-                <tr key={order.id}>
-                    <th>{order.id}</th>
-                    <th><h4> {order.buyer.Nombre} </h4></th>
-                    <th><h4> {order.total}</h4></th>
-                    <th><h4>{order.fecha}</h4></th>
-                </tr>
-                )}
-                </tbody>
-            </table>
+       
 
-    </div>)
+    
 }
 export default OrderContainer
