@@ -16,7 +16,7 @@ export default function Navbar(){
             Productos
           </Link>
           <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><Link className="dropdown-item" to="/">Todos</Link></li>
+            <li><Link className="dropdown-item" to="/productos">Todos</Link></li>
             <li><Link className="dropdown-item" to="/categoria/cableado">Cableados</Link></li>
             <li><Link className="dropdown-item" to="/categoria/inalambrico">Inalambricos</Link></li>
           </ul>

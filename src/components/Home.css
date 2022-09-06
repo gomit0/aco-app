@@ -1,0 +1,30 @@
+.carru{
+
+    height: 1024px;
+}
+.hache-cinco{
+    color: white;
+}
+.pe{
+    color: white;
+}
+.htitle{
+    text-align: center;
+}
+.about{
+    width: 600px;
+    height: 500px;
+}
+.peAbout{
+    padding-top: 5rem;
+    text-align:center;
+}
+.peAbout li{
+    list-style: none;
+}
+.tnail{
+
+    width: 200px;
+    height: 200px;
+}
+

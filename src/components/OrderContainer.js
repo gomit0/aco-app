@@ -37,7 +37,7 @@ const OrderContainer=()=>{
   
     return(
         <div className="container">
-                 <h2> Buscar orden <input type='text' placeholder="ID" value={search} onChange={queryId}/><button onClick={handleSearchResult}>Buscar</button></h2>
+                 <h2>Buscar Orden<input className="form-control" type='text' placeholder="ID" value={search} onChange={queryId}/><button onClick={handleSearchResult} className='btn btn-success'>Buscar</button></h2>
         
                 <table className="table">
                     <thead>
