@@ -11,8 +11,8 @@ puedes encontrar una pequeña leyenda sobre nosotros y las marcas actuales que t
 ## DEMO
 recorrido de cómo comprar
 
-![](https://ibb.co/9Gyfdvk)
-o miralo desde aca [](https://ibb.co/9Gyfdvk)
+![demo](https://user-images.githubusercontent.com/22359624/188540145-4a04f3bf-56e7-4987-97e0-0d561813049f.gif)
+
 
 
 ## COMO INSTALAR
