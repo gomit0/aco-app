@@ -11,8 +11,8 @@ puedes encontrar una pequeña leyenda sobre nosotros y las marcas actuales que t
 ## DEMO
 recorrido de cómo comprar
 
-![demostracion](https://firebasestorage.googleapis.com/v0/b/aco-app-ecommerce.appspot.com/o/demo.gif?alt=media&token=64f93f07-e2f2-4fb2-94ee-38b7fda11016)
-o miralo desde aca [](https://firebasestorage.googleapis.com/v0/b/aco-app-ecommerce.appspot.com/o/demo.gif?alt=media&token=64f93f07-e2f2-4fb2-94ee-38b7fda11016)
+![](https://ibb.co/9Gyfdvk)
+o miralo desde aca [](https://ibb.co/9Gyfdvk)
 
 
 ## COMO INSTALAR
