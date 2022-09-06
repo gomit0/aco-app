@@ -11,7 +11,7 @@ puedes encontrar una pequeña leyenda sobre nosotros y las marcas actuales que t
 ## DEMO
 recorrido de cómo comprar
 ![demostracion](https://firebasestorage.googleapis.com/v0/b/aco-app-ecommerce.appspot.com/o/copra-chica.gif?alt=media&token=1ab3fb38-4289-47ee-aea6-03fddd2e2016)
-
+o [miralo desde aca](https://firebasestorage.googleapis.com/v0/b/aco-app-ecommerce.appspot.com/o/copra-chica.gif?alt=media&token=1ab3fb38-4289-47ee-aea6-03fddd2e2016)
 ## COMO INSTALAR
 Descargar la carpeta desde el [Github](https://github.com/gomit0/aco-app)
 
