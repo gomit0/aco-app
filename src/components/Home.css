@@ -1,6 +1,7 @@
 .carru{
 
-    height: 1024px;
+    height: 64rem,auto ;
+
 }
 .hache-cinco{
     color: white;
@@ -12,8 +13,8 @@
     text-align: center;
 }
 .about{
-    width: 600px;
-    height: 500px;
+    width: 37rem,auto ;
+    height: 31rem,auto ;
 }
 .peAbout{
     padding-top: 5rem;
@@ -24,7 +25,7 @@
 }
 .tnail{
 
-    width: 200px;
-    height: 200px;
+    width: 12rem;
+    height: 12rem;
 }
 

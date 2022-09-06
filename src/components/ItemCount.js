@@ -19,10 +19,10 @@ export const ItemCount = ({ initial, stock, onAdd }) => {
     return(
         <div>
             <div className="d-flex justify-content-between">
-            <button disabled={count<=1} className="btn btn-primary" onClick={handleSubstract}>-</button>
+            <button disabled={count<=1} className="btn btn-warning" onClick={handleSubstract}>-</button>
             <h6> {count} </h6>
-            <button disabled={count >= stock} className="btn btn-primary" onClick={handleAdd}>+</button> 
-            <button disabled={stock <=0} className="btn btn-primary" onClick={()=>onAdd(count)}>Agregar al Carrito</button>  
+            <button disabled={count >= stock} className="btn btn-warning" onClick={handleAdd}>+</button> 
+            <button disabled={stock <=0} className="btn btn-warning" onClick={()=>onAdd(count)}>Agregar al Carrito</button>  
             </div>          
 
         </div>

@@ -1,6 +1,7 @@
 import CartWidget from "./CartWidget"
 import './NavBar.css'
 import { Link } from "react-router-dom";
+import LogoHome from "./LogoHome";
 
 export default function Navbar(){
   
@@ -9,7 +10,7 @@ export default function Navbar(){
 
       <ul className="navbar-nav w-100">
         <li className="nav-item">
-          <Link className="navbar-brand mb-0 h1" to="/">INICIO</Link>
+          <LogoHome/>
         </li>
         <li className="nav-item dropdown" >
           <Link className="nav-link dropdown-toggle" to="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
